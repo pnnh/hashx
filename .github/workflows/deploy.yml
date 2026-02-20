@@ -1,0 +1,76 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]  # Trigger on push to main; adjust as needed
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # This enables recursive submodule checkout
+          fetch-depth: 0  # Fetch all history for accurate versioning
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm' # 开启 npm 缓存
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify dist exists and has files
+        run: |
+          pwd
+          ls -la
+          if [ ! -d "dist" ]; then
+          echo "CRITICAL: dist directory not found after build!"
+          exit 1
+          fi
+          if [ -z "$(ls -A dist)" ]; then
+          echo "CRITICAL: dist directory is empty!"
+          exit 1
+          fi
+          echo "dist contents:"
+          ls -la dist
+          du -sh dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'    # 确认这里是正确的相对路径
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

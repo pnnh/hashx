@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #1976d2;
+}
+
+body.dark-theme {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #90caf9;
+}
+
+body {
+  margin: 0;
+  padding-top: max(env(safe-area-inset-top), 0px);
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  padding-left: max(env(safe-area-inset-left), 0px);
+  padding-right: max(env(safe-area-inset-right), 0px);
+  background: var(--background-color);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: var(--text-color);
+  font-family: Roboto, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  font-size: 13px;
+  scrollbar-width: thin;
+  width: calc(100vw - env(safe-area-inset-left) - env(safe-area-inset-right));
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+
+
+html.chrome-mode,
+body.chrome-mode {
+  width: 400px;
+  height: 600px; // chrome 扩展限制的最大高度
+}
+
+@media (min-width: 20rem) {
+
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48rem) {
+
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 80rem) {
+
+  html,
+  body {
+    font-size: 16px;
+  }
+}
