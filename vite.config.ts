@@ -18,7 +18,7 @@ export default defineConfig(async () => ({
             targets: [
                 {
                     src: 'index.html',
-                    dest: 'public/',
+                    dest: '.',
                     rename: '404.html'
                 }
             ]
