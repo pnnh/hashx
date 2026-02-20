@@ -14,15 +14,16 @@ export default defineConfig(async () => ({
     },
   plugins: [
     react(),
-        viteStaticCopy({
-            targets: [
-                {
-                    src: 'index.html',
-                    dest: '.',
-                    rename: '404.html'
-                }
-            ]
-        })
+    viteStaticCopy({
+        targets: [
+            // 拷贝 dist/index.html 到 dist/404.html，确保在生产环境页面跳转时能够正确加载
+            {
+                src: 'dist/index.html',
+                dest: '.',
+                rename: '404.html'
+            }
+        ]
+    })
   ],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
