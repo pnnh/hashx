@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import {fileURLToPath, URL} from "url"
+import {viteStaticCopy} from "vite-plugin-static-copy";
 
 const host = process.env.TAURI_DEV_HOST;
 
@@ -13,15 +14,15 @@ export default defineConfig(async () => ({
     },
   plugins: [
     react(),
-        // viteStaticCopy({
-        //     targets: [
-        //         {
-        //             src: 'src/locales/*',
-        //             dest: '_locales',
-        //             // structured: true,
-        //         }
-        //     ]
-        // })
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'index.html',
+                    dest: 'public/',
+                    rename: '404.html'
+                }
+            ]
+        })
   ],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
