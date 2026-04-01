@@ -20,6 +20,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^7.3.1",
     "@mui/material": "^7.3.1",
+    "@mui/system": "^7.3.9",
     "@noble/hashes": "^2.0.0",
     "@pnnh/atom": "^0.11.0",
     "@scure/base": "^2.0.0",
