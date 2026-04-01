@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri dev"
+    "tauri": "tauri dev",
+    "deploy": "wrangler deploy", 
+    "start": "wrangler dev"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
@@ -45,6 +47,7 @@
     "sass": "^1.79.1",
     "typescript": "^5.9.3",
     "vite": "7.1.11",
+    "wrangler": "^4.79.0",
     "vite-plugin-static-copy": "^3.1.2"
   }
 }
