@@ -11,6 +11,7 @@
     "deploy": "wrangler deploy",
     "start": "wrangler dev"
   },
+  "packageManager": "pnpm@10.33.0",
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/css": "^11.13.0",
