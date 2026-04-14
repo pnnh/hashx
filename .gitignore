@@ -192,3 +192,6 @@ dist
 .env*
 !.env.example
 .wrangler/
+
+#pwa
+dev-dist/

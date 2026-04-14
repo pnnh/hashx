@@ -3,10 +3,82 @@
   <head>
     <base href="/"/>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Viewport -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"/>
-    <title>Hashx</title>
+
+    <!-- Primary meta -->
+    <title>Hashx – Online Hash Tool</title>
+    <meta name="description"
+          content="Free online hash toolkit. Compute MD5, SHA-1, SHA-256, SHA-512, SHA-3, BLAKE2b, BLAKE3, RIPEMD-160 and HMAC entirely in your browser — no data leaves your device. Supports file hashing, batch mode, hash verification and output in hex/Base64." />
+    <meta name="keywords"
+          content="hash tool, MD5, SHA-256, SHA-512, SHA-1, SHA-3, BLAKE2b, BLAKE3, RIPEMD-160, HMAC, online hash, checksum, cryptographic hash, file hash" />
+    <meta name="author" content="Hashx" />
+    <link rel="canonical" href="https://hashx.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://hashx.app/" />
+    <meta property="og:title"       content="Hashx – Online Hash Tool" />
+    <meta property="og:description" content="Client-side hash toolkit: MD5, SHA-1, SHA-256, SHA-512, SHA-3, BLAKE2b, BLAKE3, RIPEMD-160, HMAC. All computation happens in your browser." />
+    <meta property="og:image"       content="https://hashx.app/logo128.png" />
+    <meta property="og:site_name"   content="Hashx" />
+    <meta property="og:locale"      content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content="Hashx – Online Hash Tool" />
+    <meta name="twitter:description" content="Free, client-side hash toolkit. MD5, SHA family, BLAKE2b/3, RIPEMD-160, HMAC — no data sent to server." />
+    <meta name="twitter:image"       content="https://hashx.app/logo128.png" />
+
+    <!-- PWA / App -->
+    <meta name="application-name" content="Hashx" />
+    <meta name="apple-mobile-web-app-capable"          content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title"            content="Hashx" />
+    <meta name="mobile-web-app-capable"                content="yes" />
+    <meta name="theme-color"                           content="#1976d2" />
+    <link rel="apple-touch-icon" href="/logo128.png" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="48x48"  href="/logo48.png" />
+    <link rel="icon" type="image/png" sizes="64x64"  href="/logo64.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/logo128.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Hashx",
+      "url": "https://hashx.app/",
+      "description": "Free online hash toolkit — MD5, SHA-1, SHA-256, SHA-512, SHA-3, BLAKE2b, BLAKE3, RIPEMD-160, HMAC. All computation happens client-side.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "MD5 hash",
+        "SHA-1 hash",
+        "SHA-256 hash",
+        "SHA-512 hash",
+        "SHA-3 hash (224/256/384/512/Keccak-256)",
+        "BLAKE2b hash",
+        "BLAKE3 hash",
+        "RIPEMD-160 hash",
+        "HMAC authentication code",
+        "File hash computation",
+        "Batch hash processing",
+        "Hash verification",
+        "Multiple output formats: hex, Base64, Base64url"
+      ]
+    }
+    </script>
   </head>
 
   <body>

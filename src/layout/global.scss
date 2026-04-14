@@ -1,15 +1,11 @@
 @charset "UTF-8";
 
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --background-color: #f5f5f5;
+  --text-color: #1a1a1a;
   --primary-color: #1976d2;
-}
-
-body.dark-theme {
-  --background-color: #000000;
-  --text-color: #ffffff;
-  --primary-color: #90caf9;
+  --surface-color: #ffffff;
+  --border-color: #d3d3d3;
 }
 
 body {
@@ -33,34 +29,20 @@ body {
   height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }
 
-
-
 html.chrome-mode,
 body.chrome-mode {
   width: 400px;
-  height: 600px; // chrome 扩展限制的最大高度
+  height: 600px;
 }
 
 @media (min-width: 20rem) {
-
-  html,
-  body {
-    font-size: 14px;
-  }
+  html, body { font-size: 14px; }
 }
 
 @media (min-width: 48rem) {
-
-  html,
-  body {
-    font-size: 15px;
-  }
+  html, body { font-size: 15px; }
 }
 
 @media (min-width: 80rem) {
-
-  html,
-  body {
-    font-size: 16px;
-  }
+  html, body { font-size: 16px; }
 }

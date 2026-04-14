@@ -1,36 +1,41 @@
-import {css} from "@emotion/css";
-import {langEn, SymbolUnknown} from "@pnnh/atom";
-import Sha512Component from "./sha512";
-import {useParams} from "react-router";
-import {defaultLanguage, getTargetLang} from "@/locales/language.tsx";
-import {useEffect} from "react";
-import {transKey} from "@/locales/normal.ts";
-import {ToolsLayout} from "@/layout/layout.tsx";
+import { useEffect } from 'react'
+import { css } from '@emotion/css'
+import Sha512Component from './sha512'
+import { ToolsLayout } from '@/layout/layout'
+import { useParams } from 'react-router'
+import { transKey } from '@/locales/normal'
+import { defaultLanguage, getTargetLang, isSupportedLanguage } from '@/locales/language'
+import { NotFoundPage } from '@/pages/notFound'
 
-const pageStyles = {
-    sha512Page: css`
-        width: 960px;
-        margin: 0 auto;
-    `
-}
+const pageStyle = css`
+    width: min(960px, 100%);
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+`
 
-export function Sha512Page( ) {
-
-    let { lang } = useParams();
+export function Sha512Page() {
+    let { lang } = useParams()
     if (!lang) {
         lang = getTargetLang(navigator.language, defaultLanguage)
+    } else if (!isSupportedLanguage(lang)) {
+        return <NotFoundPage />
     }
     useEffect(() => {
-        document.documentElement.lang = lang
-        document.title = transKey(lang, 'tools.sha512.name')
-        const descEl = document.querySelector('meta[name="description"]')
-        if (descEl) {
-            descEl.setAttribute('content', transKey(lang, 'tools.sha512.description'));
-        }
-    }, [lang]);
-    return <ToolsLayout lang={lang} >
-        <div className={pageStyles.sha512Page}>
-            <Sha512Component lang={lang} />
-        </div>
-    </ToolsLayout>
+        document.documentElement.lang = lang!
+        document.title = transKey(lang!, 'tools.sha512.name')
+        document.querySelector('meta[name="description"]')
+            ?.setAttribute('content', transKey(lang!, 'tools.sha512.description'))
+    }, [lang])
+
+    return (
+        <ToolsLayout lang={lang}>
+            <div className={pageStyle}>
+                <h1 style={{ fontSize: '1.4rem', fontWeight: 600, marginBottom: 12 }}>
+                    {transKey(lang, 'tools.sha512.name')}
+                </h1>
+                <Sha512Component lang={lang} />
+            </div>
+        </ToolsLayout>
+    )
 }

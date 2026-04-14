@@ -1,166 +1,479 @@
-import {LangTextValue} from "./language";
+import { LangTextValue } from "./language";
 
 export const TransTexts: {
     [key: string]: LangTextValue
 } = {
-    "AutoTheme": {
-        "zh": "自动",
-        "en": "Auto",
-        "es": "Auto",
-        "fr": "Auto",
-        "ja": "自動",
-        "de-DE": "Auto",
-        "pt-PT": "Auto",
-        "zh-TW": "自動"
-    },
-    "LightTheme": {
-        "zh": "浅色",
-        "en": "Light",
-        "es": "Claro",
-        "fr": "Clair",
-        "ja": "ライト",
-        "de-DE": "Hell",
-        "pt-PT": "Claro",
-        "zh-TW": "淺色"
-    },
-    "DarkTheme": {
-        "zh": "深色",
-        "en": "Dark",
-        "es": "Oscuro",
-        "fr": "Sombre",
-        "ja": "ダーク",
-        "de-DE": "Dunkel",
-        "pt-PT": "Escuro",
-        "zh-TW": "深色"
-    },
-    "tools.md5.name": {
-        "zh": "MD5加密",
-        "en": "MD5 Encode",
-        "es": "Codificación MD5",
-        "fr": "Encodage MD5",
-        "ja": "MD5エンコード",
-        "de-DE": "MD5-Verschlüsselung",
-        "pt-PT": "Codificação MD5",
-        "zh-TW": "MD5加密"
-    },
-    "tools.md5.description": {
-        "zh": "MD5加密工具，输入文本后点击加密按钮即可得到MD5加密结果。",
-        "en": "MD5 encoding tool. Enter text and click the encode button to get the MD5 encoded result.",
-        "es": "Herramienta de codificación MD5. Ingrese texto y haga clic en el botón de codificación para obtener el resultado codificado en MD5.",
-        "fr": "Outil de codage MD5. Entrez du texte et cliquez sur le bouton de codage pour obtenir le résultat encodé en MD5.",
-        "ja": "MD5エンコードツール。テキストを入力してエンコードボタンをクリックすると、MD5エンコードされた結果が得られます。",
-        "de-DE": "MD5-Verschlüsselungswerkzeug. Geben Sie Text ein und klicken Sie auf die Verschlüsselungsschaltfläche, um das MD5-verschlüsselte Ergebnis zu erhalten.",
-        "pt-PT": "Ferramenta de codificação MD5. Insira texto e clique no botão de codificação para obter o resultado codificado em MD5.",
-        "zh-TW": "MD5加密工具，輸入文本後點擊加密按鈕即可得到MD5加密結果。"
-    },
-    "tools.common.inputPlaceholder": {
-        "zh": "请输入需要编码的文本",
-        "en": "Please enter the text to be encoded",
-        "es": "Por favor ingrese el texto a codificar",
-        "fr": "Veuillez saisir le texte à encoder",
-        "ja": "エンコードするテキストを入力してください",
-        "de-DE": "Bitte geben Sie den zu kodierenden Text ein",
-        "pt-PT": "Por favor insira o texto a ser codificado",
-        "zh-TW": "請輸入需要編碼的文本"
-    },
-    "tools.common.resultPlaceholder": {
-        "zh": "编码结果",
-        "en": "Encoded Result",
-        "es": "Resultado codificado",
-        "fr": "Résultat encodé",
-        "ja": "エンコード結果",
-        "de-DE": "Kodiertes Ergebnis",
-        "pt-PT": "Resultado codificado",
-        "zh-TW": "編碼結果"
-    },
-    "tools.sha256.encode": {
-        "zh": "Sha256编码",
-        "en": "Encode Sha256",
-        "es": "Codificar Sha256",
-        "fr": "Encoder Sha256",
-        "ja": "Sha256 エンコード",
-        "de-DE": "Sha256 kodieren",
-        "pt-PT": "Codificar Sha256",
-        "zh-TW": "Sha256編碼"
-    },
-    "tools.sha512.encode": {
-        "zh": "Sha512编码",
-        "en": "Encode Sha512",
-        "es": "Codificar Sha512",
-        "fr": "Encoder Sha512",
-        "ja": "Sha512 エンコード",
-        "de-DE": "Sha512 kodieren",
-        "pt-PT": "Codificar Sha512",
-        "zh-TW": "Sha512編碼"
-    },
-    "tools.sha256.name": {
-        "zh": "SHA-256 哈希工具",
-        "en": "SHA-256 Hash Tool",
-        "es": "Herramienta de hash SHA-256",
-        "fr": "Outil de hachage SHA-256",
-        "ja": "SHA-256 ハッシュツール",
-        "de-DE": "SHA-256 Hash-Tool",
-        "pt-PT": "Ferramenta de hash SHA-256",
-        "zh-TW": "SHA-256 哈希工具"
-    },
-    "tools.sha256.description": {
-        "zh": "SHA-256 哈希工具可以计算字符串的 SHA-256 哈希值，常用于数据完整性校验和密码存储。",
-        "en": "SHA-256 hash tool can calculate the SHA-256 hash value of a string, commonly used for data integrity verification and password storage.",
-        "es": "La herramienta de hash SHA-256 puede calcular el valor hash SHA-256 de una cadena, comúnmente utilizada para la verificación de integridad de datos y el almacenamiento de contraseñas.",
-        "fr": "L'outil de hachage SHA-256 peut calculer la valeur de hachage SHA-256 d'une chaîne, couramment utilisé pour la vérification de l'intégrité des données et le stockage des mots de passe.",
-        "ja": "SHA-256 ハッシュツールは、文字列の SHA-256 ハッシュ値を計算でき、データの整合性検証やパスワードの保存に一般的に使用されます。",
-        "de-DE": "Das SHA-256-Hash-Tool kann den SHA-256-Hashwert einer Zeichenfolge berechnen, der häufig für die Überprüfung der Datenintegrität und die Passwortspeicherung verwendet wird.",
-        "pt-PT": "A ferramenta de hash SHA-256 pode calcular o valor hash SHA-256 de uma string, comumente usada para verificação de integridade de dados e armazenamento de senhas.",
-        "zh-TW": "SHA-256 哈希工具可以計算字符串的 SHA-256 哈希值，常用於數據完整性校驗和密碼存儲。"
-    },
-    "tools.sha512.name": {
-        "zh": "SHA-512 哈希工具",
-        "en": "SHA-512 Hash Tool",
-        "es": "Herramienta de hash SHA-512",
-        "fr": "Outil de hachage SHA-512",
-        "ja": "SHA-512 ハッシュツール",
-        "de-DE": "SHA-512 Hash-Tool",
-        "pt-PT": "Ferramenta de hash SHA-512",
-        "zh-TW": "SHA-512 哈希工具"
-    },
-    "tools.sha512.description": {
-        "zh": "SHA-512 哈希工具可以计算字符串的 SHA-512 哈希值，提供更高的安全性，适用于需要强加密的场景。",
-        "en": "SHA-512 hash tool can calculate the SHA-512 hash value of a string, providing higher security, suitable for scenarios requiring strong encryption.",
-        "es": "La herramienta de hash SHA-512 puede calcular el valor hash SHA-512 de una cadena, proporcionando mayor seguridad, adecuada para escenarios que requieren cifrado fuerte.",
-        "fr": "L'outil de hachage SHA-512 peut calculer la valeur de hachage SHA-512 d'une chaîne, offrant une sécurité accrue, adapté aux scénarios nécessitant un chiffrement fort.",
-        "ja": "SHA-512 ハッシュツールは、文字列の SHA-512 ハッシュ値を計算でき、より高いセキュリティを提供し、強力な暗号化が必要なシナリオに適しています。",
-        "de-DE": "Das SHA-512-Hash-Tool kann den SHA-512-Hashwert einer Zeichenfolge berechnen und bietet höhere Sicherheit, die für Szenarien geeignet ist, die starke Verschlüsselung erfordern.",
-        "pt-PT": "A ferramenta de hash SHA-512 pode calcular o valor hash SHA-512 de uma string, proporcionando maior segurança, adequada para cenários que exigem criptografia forte.",
-        "zh-TW": "SHA-512 哈希工具可以計算字符串的 SHA-512 哈希值，提供更高的安全性，適用於需要強加密的場景。"
-    },
-    "tools.md5.encode": {
-        "zh": "Md5编码",
-        "en": "Md5 Encode",
-        "es": "Codificar Md5",
-        "fr": "Encoder Md5",
-        "ja": "Md5 エンコード",
-        "de-DE": "Md5 kodieren",
-        "pt-PT": "Codificar Md5",
-        "zh-TW": "Md5編碼"
-    },
+    // ── Page / 404 ──────────────────────────────────────────────────────────
     "PageNotFound": {
-        "zh": "页面未找到",
-        "en": "Page Not Found",
-        "es": "Página no encontrada",
-        "fr": "Page non trouvée",
-        "ja": "ページが見つかりません",
-        "de-DE": "Seite nicht gefunden",
+        en: "Page Not Found",
+        zh: "页面未找到",
+        ja: "ページが見つかりません",
+        es: "Página no encontrada",
+        fr: "Page non trouvée",
         "pt-PT": "Página não encontrada",
-        "zh-TW": "頁面未找到"
     },
     "GoBackHome": {
-        "zh": "返回首页",
-        "en": "Go Back Home",
-        "es": "Volver a casa",
-        "fr": "Retour à l'accueil",
-        "ja": "ホームに戻る",
-        "de-DE": "Zurück zur Startseite",
+        en: "Go Back Home",
+        zh: "返回首页",
+        ja: "ホームに戻る",
+        es: "Volver a casa",
+        fr: "Retour à l'accueil",
         "pt-PT": "Voltar para casa",
-        "zh-TW": "返回首頁"
-    }
+    },
+
+    // ── Nav ──────────────────────────────────────────────────────────────────
+    "nav.hashTools": {
+        en: "Hash Tools",
+        zh: "哈希工具",
+        ja: "ハッシュツール",
+        es: "Herramientas Hash",
+        fr: "Outils de hachage",
+        "pt-PT": "Ferramentas de hash",
+    },
+    // ── Common UI ────────────────────────────────────────────────────────────
+    "tools.common.inputPlaceholder": {
+        en: "Please enter the text to be hashed",
+        zh: "请输入需要哈希的文本",
+        ja: "ハッシュするテキストを入力してください",
+        es: "Por favor ingrese el texto a hashear",
+        fr: "Veuillez saisir le texte à hacher",
+        "pt-PT": "Por favor insira o texto a ser hasheado",
+    },
+    "tools.common.resultPlaceholder": {
+        en: "Hash result",
+        zh: "哈希结果",
+        ja: "ハッシュ結果",
+        es: "Resultado del hash",
+        fr: "Résultat du hachage",
+        "pt-PT": "Resultado do hash",
+    },
+    "tools.common.compute": {
+        en: "Compute Hash",
+        zh: "计算哈希",
+        ja: "ハッシュを計算",
+        es: "Calcular Hash",
+        fr: "Calculer le Hachage",
+        "pt-PT": "Calcular Hash",
+    },
+    "tools.common.copy": {
+        en: "Copy",
+        zh: "复制",
+        ja: "コピー",
+        es: "Copiar",
+        fr: "Copier",
+        "pt-PT": "Copiar",
+    },
+    "tools.common.copied": {
+        en: "Copied!",
+        zh: "已复制！",
+        ja: "コピーしました！",
+        es: "¡Copiado!",
+        fr: "Copié !",
+        "pt-PT": "Copiado!",
+    },
+
+    // ── Options ──────────────────────────────────────────────────────────────
+    "tools.common.options": {
+        en: "Options",
+        zh: "选项",
+        ja: "オプション",
+        es: "Opciones",
+        fr: "Options",
+        "pt-PT": "Opções",
+    },
+    "tools.common.outputFormat": {
+        en: "Output Format",
+        zh: "输出格式",
+        ja: "出力形式",
+        es: "Formato de salida",
+        fr: "Format de sortie",
+        "pt-PT": "Formato de saída",
+    },
+    "tools.common.outputFormatHexLower": {
+        en: "Hex (lowercase)",
+        zh: "十六进制（小写）",
+        ja: "16進数（小文字）",
+        es: "Hex (minúsculas)",
+        fr: "Hex (minuscules)",
+        "pt-PT": "Hex (minúsculas)",
+    },
+    "tools.common.outputFormatHexUpper": {
+        en: "Hex (uppercase)",
+        zh: "十六进制（大写）",
+        ja: "16進数（大文字）",
+        es: "Hex (mayúsculas)",
+        fr: "Hex (majuscules)",
+        "pt-PT": "Hex (maiúsculas)",
+    },
+    "tools.common.outputFormatBase64": {
+        en: "Base64",
+        zh: "Base64",
+        ja: "Base64",
+        es: "Base64",
+        fr: "Base64",
+        "pt-PT": "Base64",
+    },
+    "tools.common.outputFormatBase64url": {
+        en: "Base64url (no padding)",
+        zh: "Base64url（无填充）",
+        ja: "Base64url（パディングなし）",
+        es: "Base64url (sin relleno)",
+        fr: "Base64url (sans rembourrage)",
+        "pt-PT": "Base64url (sem preenchimento)",
+    },
+    "tools.common.textEncoding": {
+        en: "Text Encoding",
+        zh: "文本编码",
+        ja: "テキストエンコーディング",
+        es: "Codificación de texto",
+        fr: "Encodage du texte",
+        "pt-PT": "Codificação de texto",
+    },
+
+    // ── Verify ───────────────────────────────────────────────────────────────
+    "tools.common.verifyHash": {
+        en: "Verify Hash",
+        zh: "验证哈希",
+        ja: "ハッシュを検証",
+        es: "Verificar Hash",
+        fr: "Vérifier le Hachage",
+        "pt-PT": "Verificar Hash",
+    },
+    "tools.common.expectedHash": {
+        en: "Enter expected hash to verify...",
+        zh: "输入预期的哈希值以验证...",
+        ja: "検証するハッシュ値を入力...",
+        es: "Ingrese el hash esperado para verificar...",
+        fr: "Entrez le hachage attendu pour vérifier...",
+        "pt-PT": "Insira o hash esperado para verificar...",
+    },
+    "tools.common.hashMatch": {
+        en: "Hash matches!",
+        zh: "哈希值匹配！",
+        ja: "ハッシュが一致しました！",
+        es: "¡El hash coincide!",
+        fr: "Le hachage correspond !",
+        "pt-PT": "O hash corresponde!",
+    },
+    "tools.common.hashNotMatch": {
+        en: "Hash does not match!",
+        zh: "哈希值不匹配！",
+        ja: "ハッシュが一致しません！",
+        es: "¡El hash no coincide!",
+        fr: "Le hachage ne correspond pas !",
+        "pt-PT": "O hash não corresponde!",
+    },
+
+    // ── History ──────────────────────────────────────────────────────────────
+    "tools.common.history": {
+        en: "History",
+        zh: "历史记录",
+        ja: "履歴",
+        es: "Historial",
+        fr: "Historique",
+        "pt-PT": "Histórico",
+    },
+    "tools.common.clearHistory": {
+        en: "Clear",
+        zh: "清空",
+        ja: "クリア",
+        es: "Borrar",
+        fr: "Effacer",
+        "pt-PT": "Limpar",
+    },
+    "tools.common.historyEmpty": {
+        en: "No history yet",
+        zh: "暂无历史记录",
+        ja: "履歴はまだありません",
+        es: "Sin historial aún",
+        fr: "Pas encore d'historique",
+        "pt-PT": "Sem histórico ainda",
+    },
+
+    // ── Batch mode ───────────────────────────────────────────────────────────
+    "tools.common.batchMode": {
+        en: "Batch",
+        zh: "批量",
+        ja: "バッチ",
+        es: "Lotes",
+        fr: "Lot",
+        "pt-PT": "Lote",
+    },
+    "tools.common.batchInputPlaceholder": {
+        en: "Enter one value per line...",
+        zh: "每行输入一个值...",
+        ja: "1行に1つの値を入力...",
+        es: "Ingrese un valor por línea...",
+        fr: "Entrez une valeur par ligne...",
+        "pt-PT": "Insira um valor por linha...",
+    },
+    "tools.common.exportCsv": {
+        en: "Export CSV",
+        zh: "导出 CSV",
+        ja: "CSV エクスポート",
+        es: "Exportar CSV",
+        fr: "Exporter CSV",
+        "pt-PT": "Exportar CSV",
+    },
+    "tools.common.batchInput": {
+        en: "Input",
+        zh: "输入",
+        ja: "入力",
+        es: "Entrada",
+        fr: "Entrée",
+        "pt-PT": "Entrada",
+    },
+    "tools.common.batchResult": {
+        en: "Hash",
+        zh: "哈希值",
+        ja: "ハッシュ値",
+        es: "Hash",
+        fr: "Hachage",
+        "pt-PT": "Hash",
+    },
+
+    // ── File mode ────────────────────────────────────────────────────────────
+    "tools.common.fileInput": {
+        en: "File",
+        zh: "文件",
+        ja: "ファイル",
+        es: "Archivo",
+        fr: "Fichier",
+        "pt-PT": "Arquivo",
+    },
+    "tools.common.fileDrop": {
+        en: "Drop a file here, or click to select",
+        zh: "将文件拖拽到此处，或点击选择",
+        ja: "ファイルをここにドロップするか、クリックして選択",
+        es: "Suelte un archivo aquí o haga clic para seleccionar",
+        fr: "Déposez un fichier ici ou cliquez pour sélectionner",
+        "pt-PT": "Solte um arquivo aqui ou clique para selecionar",
+    },
+    "tools.common.fileSizeWarning": {
+        en: "File exceeds 100 MB — please use a dedicated CLI tool for large files.",
+        zh: "文件超过 100 MB，请使用专用命令行工具处理大文件。",
+        ja: "ファイルが 100 MB を超えています。大きなファイルは専用の CLI ツールをご使用ください。",
+        es: "El archivo supera 100 MB. Use una herramienta CLI dedicada para archivos grandes.",
+        fr: "Le fichier dépasse 100 Mo. Utilisez un outil CLI dédié pour les fichiers volumineux.",
+        "pt-PT": "O arquivo excede 100 MB. Use uma ferramenta CLI dedicada para arquivos grandes.",
+    },
+    "tools.common.fileSelected": {
+        en: "Selected",
+        zh: "已选择",
+        ja: "選択済み",
+        es: "Seleccionado",
+        fr: "Sélectionné",
+        "pt-PT": "Selecionado",
+    },
+    "tools.common.textMode": {
+        en: "Text",
+        zh: "文本",
+        ja: "テキスト",
+        es: "Texto",
+        fr: "Texte",
+        "pt-PT": "Texto",
+    },
+
+    // ── MD5 ──────────────────────────────────────────────────────────────────
+    "tools.md5.name": {
+        en: "MD5 Hash",
+        zh: "MD5 哈希",
+        ja: "MD5 ハッシュ",
+        es: "Hash MD5",
+        fr: "Hachage MD5",
+        "pt-PT": "Hash MD5",
+    },
+    "tools.md5.description": {
+        en: "MD5 produces a 128-bit hash. Deprecated for security use, but still common for checksums.",
+        zh: "MD5 生成 128 位哈希值。已不适用于安全场景，但仍广泛用于校验。",
+        ja: "MD5 は 128 ビットのハッシュを生成します。セキュリティ用途では非推奨ですが、チェックサムとして広く使われています。",
+        es: "MD5 produce un hash de 128 bits. Obsoleto para uso de seguridad, pero aún común para sumas de verificación.",
+        fr: "MD5 produit un hachage de 128 bits. Déprécié pour la sécurité, mais encore courant pour les sommes de contrôle.",
+        "pt-PT": "MD5 produz um hash de 128 bits. Obsoleto para uso de segurança, mas ainda comum para checksums.",
+    },
+
+    // ── SHA-1 ────────────────────────────────────────────────────────────────
+    "tools.sha1.name": {
+        en: "SHA-1 Hash",
+        zh: "SHA-1 哈希",
+        ja: "SHA-1 ハッシュ",
+        es: "Hash SHA-1",
+        fr: "Hachage SHA-1",
+        "pt-PT": "Hash SHA-1",
+    },
+    "tools.sha1.description": {
+        en: "SHA-1 produces a 160-bit hash. Considered cryptographically weak; avoid for new security applications.",
+        zh: "SHA-1 生成 160 位哈希值。密码学上被认为较弱，新的安全应用中应避免使用。",
+        ja: "SHA-1 は 160 ビットのハッシュを生成します。暗号学的に弱いとされ、新しいセキュリティアプリケーションでは避けてください。",
+        es: "SHA-1 produce un hash de 160 bits. Considerado criptográficamente débil; evitar en nuevas aplicaciones de seguridad.",
+        fr: "SHA-1 produit un hachage de 160 bits. Considéré comme cryptographiquement faible ; à éviter pour les nouvelles applications de sécurité.",
+        "pt-PT": "SHA-1 produz um hash de 160 bits. Considerado criptograficamente fraco; evite em novas aplicações de segurança.",
+    },
+
+    // ── SHA-256 ──────────────────────────────────────────────────────────────
+    "tools.sha256.name": {
+        en: "SHA-256 Hash",
+        zh: "SHA-256 哈希",
+        ja: "SHA-256 ハッシュ",
+        es: "Hash SHA-256",
+        fr: "Hachage SHA-256",
+        "pt-PT": "Hash SHA-256",
+    },
+    "tools.sha256.description": {
+        en: "SHA-256 produces a 256-bit hash. Widely used for data integrity and digital signatures.",
+        zh: "SHA-256 生成 256 位哈希值，广泛用于数据完整性校验和数字签名。",
+        ja: "SHA-256 は 256 ビットのハッシュを生成し、データの整合性検証やデジタル署名に広く使用されます。",
+        es: "SHA-256 produce un hash de 256 bits. Ampliamente usado para integridad de datos y firmas digitales.",
+        fr: "SHA-256 produit un hachage de 256 bits. Largement utilisé pour l'intégrité des données et les signatures numériques.",
+        "pt-PT": "SHA-256 produz um hash de 256 bits. Amplamente usado para integridade de dados e assinaturas digitais.",
+    },
+
+    // ── SHA-512 ──────────────────────────────────────────────────────────────
+    "tools.sha512.name": {
+        en: "SHA-512 Hash",
+        zh: "SHA-512 哈希",
+        ja: "SHA-512 ハッシュ",
+        es: "Hash SHA-512",
+        fr: "Hachage SHA-512",
+        "pt-PT": "Hash SHA-512",
+    },
+    "tools.sha512.description": {
+        en: "SHA-512 produces a 512-bit hash, providing higher security for demanding applications.",
+        zh: "SHA-512 生成 512 位哈希值，为高要求场景提供更高的安全性。",
+        ja: "SHA-512 は 512 ビットのハッシュを生成し、高い要求を持つアプリケーションに高いセキュリティを提供します。",
+        es: "SHA-512 produce un hash de 512 bits, proporcionando mayor seguridad para aplicaciones exigentes.",
+        fr: "SHA-512 produit un hachage de 512 bits, offrant une sécurité accrue pour les applications exigeantes.",
+        "pt-PT": "SHA-512 produz um hash de 512 bits, proporcionando maior segurança para aplicações exigentes.",
+    },
+
+    // ── SHA-3 ────────────────────────────────────────────────────────────────
+    "tools.sha3.name": {
+        en: "SHA-3 Hash",
+        zh: "SHA-3 哈希",
+        ja: "SHA-3 ハッシュ",
+        es: "Hash SHA-3",
+        fr: "Hachage SHA-3",
+        "pt-PT": "Hash SHA-3",
+    },
+    "tools.sha3.description": {
+        en: "SHA-3 (Keccak) is the latest SHA standard with variants from 224 to 512 bits.",
+        zh: "SHA-3（Keccak）是最新的 SHA 标准，提供 224 至 512 位的多种变体。",
+        ja: "SHA-3（Keccak）は最新の SHA 規格で、224 ビットから 512 ビットまでのバリアントがあります。",
+        es: "SHA-3 (Keccak) es el último estándar SHA con variantes de 224 a 512 bits.",
+        fr: "SHA-3 (Keccak) est la dernière norme SHA avec des variantes de 224 à 512 bits.",
+        "pt-PT": "SHA-3 (Keccak) é o padrão SHA mais recente com variantes de 224 a 512 bits.",
+    },
+    "tools.sha3.variant": {
+        en: "SHA-3 Variant",
+        zh: "SHA-3 变体",
+        ja: "SHA-3 バリアント",
+        es: "Variante SHA-3",
+        fr: "Variante SHA-3",
+        "pt-PT": "Variante SHA-3",
+    },
+
+    // ── BLAKE2b ──────────────────────────────────────────────────────────────
+    "tools.blake2b.name": {
+        en: "BLAKE2b Hash",
+        zh: "BLAKE2b 哈希",
+        ja: "BLAKE2b ハッシュ",
+        es: "Hash BLAKE2b",
+        fr: "Hachage BLAKE2b",
+        "pt-PT": "Hash BLAKE2b",
+    },
+    "tools.blake2b.description": {
+        en: "BLAKE2b is a fast, secure hash function optimized for 64-bit platforms, supporting output from 1–64 bytes.",
+        zh: "BLAKE2b 是针对 64 位平台优化的快速安全哈希函数，支持 1–64 字节的可变输出长度。",
+        ja: "BLAKE2b は 64 ビットプラットフォーム向けに最適化された高速で安全なハッシュ関数で、1〜64 バイトの出力をサポートします。",
+        es: "BLAKE2b es una función hash rápida y segura optimizada para plataformas de 64 bits, con salida de 1–64 bytes.",
+        fr: "BLAKE2b est une fonction de hachage rapide et sécurisée optimisée pour les plateformes 64 bits, prenant en charge une sortie de 1 à 64 octets.",
+        "pt-PT": "BLAKE2b é uma função de hash rápida e segura otimizada para plataformas de 64 bits, suportando saída de 1–64 bytes.",
+    },
+    "tools.blake2b.outputLength": {
+        en: "Output Length (bytes)",
+        zh: "输出长度（字节）",
+        ja: "出力長（バイト）",
+        es: "Longitud de salida (bytes)",
+        fr: "Longueur de sortie (octets)",
+        "pt-PT": "Comprimento de saída (bytes)",
+    },
+
+    // ── BLAKE3 ───────────────────────────────────────────────────────────────
+    "tools.blake3.name": {
+        en: "BLAKE3 Hash",
+        zh: "BLAKE3 哈希",
+        ja: "BLAKE3 ハッシュ",
+        es: "Hash BLAKE3",
+        fr: "Hachage BLAKE3",
+        "pt-PT": "Hash BLAKE3",
+    },
+    "tools.blake3.description": {
+        en: "BLAKE3 is extremely fast and secure, using a Merkle tree structure for parallelism. Default output is 256 bits.",
+        zh: "BLAKE3 极速且安全，使用 Merkle 树结构实现并行化。默认输出为 256 位。",
+        ja: "BLAKE3 は非常に高速で安全であり、並列処理のために Merkle ツリー構造を使用します。デフォルト出力は 256 ビットです。",
+        es: "BLAKE3 es extremadamente rápido y seguro, utilizando una estructura de árbol Merkle para paralelismo. La salida predeterminada es de 256 bits.",
+        fr: "BLAKE3 est extrêmement rapide et sécurisé, utilisant une structure d'arbre Merkle pour le parallélisme. La sortie par défaut est de 256 bits.",
+        "pt-PT": "BLAKE3 é extremamente rápido e seguro, usando uma estrutura de árvore Merkle para paralelismo. A saída padrão é de 256 bits.",
+    },
+
+    // ── RIPEMD-160 ───────────────────────────────────────────────────────────
+    "tools.ripemd160.name": {
+        en: "RIPEMD-160 Hash",
+        zh: "RIPEMD-160 哈希",
+        ja: "RIPEMD-160 ハッシュ",
+        es: "Hash RIPEMD-160",
+        fr: "Hachage RIPEMD-160",
+        "pt-PT": "Hash RIPEMD-160",
+    },
+    "tools.ripemd160.description": {
+        en: "RIPEMD-160 produces a 160-bit hash, commonly used in Bitcoin address generation.",
+        zh: "RIPEMD-160 生成 160 位哈希值，常用于比特币地址生成。",
+        ja: "RIPEMD-160 は 160 ビットのハッシュを生成し、ビットコインアドレスの生成に一般的に使用されます。",
+        es: "RIPEMD-160 produce un hash de 160 bits, comúnmente usado en la generación de direcciones Bitcoin.",
+        fr: "RIPEMD-160 produit un hachage de 160 bits, couramment utilisé dans la génération d'adresses Bitcoin.",
+        "pt-PT": "RIPEMD-160 produz um hash de 160 bits, comumente usado na geração de endereços Bitcoin.",
+    },
+
+    // ── HMAC ─────────────────────────────────────────────────────────────────
+    "tools.hmac.name": {
+        en: "HMAC",
+        zh: "HMAC",
+        ja: "HMAC",
+        es: "HMAC",
+        fr: "HMAC",
+        "pt-PT": "HMAC",
+    },
+    "tools.hmac.description": {
+        en: "HMAC combines a cryptographic hash with a secret key for message authentication.",
+        zh: "HMAC 将加密哈希与密钥结合，用于消息认证。",
+        ja: "HMAC は暗号ハッシュと秘密鍵を組み合わせてメッセージ認証を行います。",
+        es: "HMAC combina un hash criptográfico con una clave secreta para autenticación de mensajes.",
+        fr: "HMAC combine un hachage cryptographique avec une clé secrète pour l'authentification des messages.",
+        "pt-PT": "HMAC combina um hash criptográfico com uma chave secreta para autenticação de mensagens.",
+    },
+    "tools.hmac.secretKey": {
+        en: "Secret Key",
+        zh: "密钥",
+        ja: "秘密鍵",
+        es: "Clave secreta",
+        fr: "Clé secrète",
+        "pt-PT": "Chave secreta",
+    },
+    "tools.hmac.keyPlaceholder": {
+        en: "Enter HMAC secret key (leave empty for empty key)",
+        zh: "输入 HMAC 密钥（留空则使用空密钥）",
+        ja: "HMAC 秘密鍵を入力（空の場合は空のキーを使用）",
+        es: "Ingrese la clave secreta HMAC (dejar vacío para clave vacía)",
+        fr: "Entrez la clé secrète HMAC (laisser vide pour clé vide)",
+        "pt-PT": "Insira a chave secreta HMAC (deixe vazio para chave vazia)",
+    },
+    "tools.hmac.algorithm": {
+        en: "Hash Algorithm",
+        zh: "哈希算法",
+        ja: "ハッシュアルゴリズム",
+        es: "Algoritmo Hash",
+        fr: "Algorithme de hachage",
+        "pt-PT": "Algoritmo de hash",
+    },
+
 }

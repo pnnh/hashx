@@ -8,17 +8,18 @@
 
   .templateNavbar {
     width: 100vw;
-    background-color: #FFF;
+    background-color: #fff;
     border-bottom: solid 1px #d3d3d3;
+    flex-shrink: 0;
   }
 
   .templateBody {
+    flex: 1;
     scrollbar-width: thin;
     overflow-x: hidden;
     overflow-y: auto;
 
     .bodyContainer {
-      height: calc(100vh - 2.5rem - 1rem);
       width: 100vw;
       display: flex;
       flex-direction: row;
@@ -27,8 +28,7 @@
       overflow-y: auto;
       overflow-x: hidden;
       scrollbar-width: thin;
+      min-height: 100%;
     }
-
   }
 }
-

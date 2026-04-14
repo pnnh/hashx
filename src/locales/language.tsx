@@ -1,15 +1,17 @@
-import {css} from "@emotion/css";
-
 export const langEnUS = 'en'
-export const langEsES = 'es' // Spanish
-export const langFrFR = 'fr' // French
-export const langDeDE = 'de-DE' // German
-export const langJaJP = 'ja' // Japanese
+export const langEsES = 'es'   // Spanish
+export const langFrFR = 'fr'   // French
+export const langJaJP = 'ja'   // Japanese
 export const langPtPT = 'pt-PT' // Portuguese
 export const langZhCN = 'zh'
-export const langZhTW = 'zh-TW' // Traditional Chinese
-export type LangKeyType = typeof langEnUS | typeof langEsES | typeof langFrFR | typeof langJaJP |
-    typeof langZhCN | typeof langDeDE | typeof langPtPT | typeof langZhTW
+
+export type LangKeyType =
+    typeof langEnUS |
+    typeof langEsES |
+    typeof langFrFR |
+    typeof langJaJP |
+    typeof langZhCN |
+    typeof langPtPT
 
 export type LangTextValue = {
     [key in LangKeyType]: string
@@ -19,44 +21,13 @@ export const defaultLanguage = langEnUS
 export const unknownLanguage = 'unknown'
 
 export const supportedLanguages = [
-    {
-        key: langEnUS, name: 'English'
-    },
-    {
-        key: langEsES, name: 'Español'
-    },
-    {
-        key: langFrFR, name: 'Français'
-    },
-    {
-        key: langDeDE, name: 'Deutsch'
-    },
-    {
-        key: langPtPT, name: 'Português'
-    },
-    {
-        key: langJaJP, name: '日本語'
-    },
-    {
-        key: langZhCN, name: '简体中文'
-    },
-    {
-        key: langZhTW, name: '繁體中文'
-    },
+    { key: langEnUS, name: 'English' },
+    { key: langEsES, name: 'Español' },
+    { key: langFrFR, name: 'Français' },
+    { key: langPtPT, name: 'Português' },
+    { key: langJaJP, name: '日本語' },
+    { key: langZhCN, name: '简体中文' },
 ]
-
-const styles = {
-    langSelector: css`
-        display: inline-block;
-        height: 1.5rem;
-        width: 1.5rem;
-        opacity: 0.8;
-        & img {
-            width: 100%;
-            height: 100%;
-        }
-    `,
-};
 
 export function getLangInfo(lang: string): { key: string, name: string } | undefined {
     const targetLang = getTargetLang(lang, defaultLanguage)
