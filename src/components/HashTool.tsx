@@ -13,6 +13,7 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import AbcIcon from '@mui/icons-material/Abc'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 import UploadFileIcon from '@mui/icons-material/UploadFile'
@@ -403,6 +404,7 @@ export default function HashTool({
                     <ResultArea
                         lang={lang}
                         output={outputText}
+                        setOutput={setOutputText}
                         copied={copied}
                         onCopy={() => handleCopy(outputText, setCopied)}
                     />
@@ -461,6 +463,7 @@ export default function HashTool({
                     <ResultArea
                         lang={lang}
                         output={fileOutput}
+                        setOutput={setFileOutput}
                         copied={fileCopied}
                         onCopy={() => handleCopy(fileOutput, setFileCopied)}
                     />
@@ -697,14 +700,31 @@ function OptionsPanel({
 interface ResultAreaProps {
     lang: string
     output: string
+    setOutput: (v: string) => void
     copied: boolean
     onCopy: () => void
 }
 
-function ResultArea({ lang, output, copied, onCopy }: ResultAreaProps) {
+function ResultArea({ lang, output, setOutput, copied, onCopy }: ResultAreaProps) {
+    const toggleCase = () => {
+        if (!output) return
+        const isLower = output === output.toLowerCase()
+        setOutput(isLower ? output.toUpperCase() : output.toLowerCase())
+    }
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    startIcon={<AbcIcon fontSize="small" />}
+                    onClick={toggleCase}
+                    disabled={!output}
+                    sx={{ fontSize: '0.75rem', py: 0.5 }}
+                >
+                    {transKey(lang, 'tools.common.toggleCase')}
+                </Button>
                 <Button
                     size="small"
                     variant="outlined"

@@ -71,6 +71,14 @@ export const TransTexts: {
         fr: "Copié !",
         "pt-PT": "Copiado!",
     },
+    "tools.common.toggleCase": {
+        en: "Toggle Case",
+        zh: "切换大小写",
+        ja: "大文字/小文字切替",
+        es: "Cambiar mayúsculas/minúsculas",
+        fr: "Changer la casse",
+        "pt-PT": "Alternar maiúsculas/minúsculas",
+    },
 
     // ── Options ──────────────────────────────────────────────────────────────
     "tools.common.options": {
